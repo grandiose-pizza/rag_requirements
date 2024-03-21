@@ -11,6 +11,7 @@ URL = 'http:<IP>:<PORT>/retrieve_context/'
 
 ## Output params is a json response with the key "text" containing a string value of relevant text:
 /Response
+
 	- text: str = Field(..., example="This is the relevant text") 
 
 ## Example of chat history with two turns of conversation
