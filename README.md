@@ -36,3 +36,13 @@ curl -X 'POST' \
   "chat_history": [],
   "upload_file": b"some bytes",}'
 ```
+
+## Other requirements:
+
+    - File formats supported?
+    - Max file size supported?
+    - Average latency as a function of file upload size 
+    - Average latency as a function of file input query + chat history bucketed to different file sizes
+    - Does the PDF need to be readbale or do you have inbuilt OCR for non readable PDFs
+    
+ 	
