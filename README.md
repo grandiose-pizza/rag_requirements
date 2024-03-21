@@ -7,12 +7,13 @@ URL = 'http:LOCALHOST:PORT/retrieve_context/'
 
 	- user_query: str = "What is the total amount in the Bill?"
 	- chat_history: Optional[Union[List[Dict[str, str]], None]] = []
-	- file: bytes
+	- file: Optional[bytes]
 
-## Output params is a json response with the key "text" containing a string value of relevant text:
+## Output params is a json response with the key "text" and "source":
 /Response
 
-	- text: str = Field(..., example="This is the relevant text") 
+	- text: str = "This is the relevant text"
+ 	- source: List[str] = ["https://en.wikipedia.org/wiki/G42_(company)", "https://core42.ai/"]
 
 ## Example of chat history with two turns of conversation
 ```python
