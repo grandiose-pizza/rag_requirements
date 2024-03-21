@@ -1,6 +1,6 @@
 ## POST Request for SH 
 
-URL = 'http:<IP>:<PORT>/retrieve_context/'
+URL = 'http:LOCALHOST:PORT/retrieve_context/'
 
 ## Input params takes in the following three params with data types mentioned:
 /retrieve_context
