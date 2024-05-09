@@ -1,4 +1,4 @@
-## POST Request for SH 
+## POST Request for SH
 
 URL = 'http:LOCALHOST:PORT/retrieve_context/'
 
@@ -39,12 +39,33 @@ curl -X 'POST' \
   "upload_file": b"some bytes",}'
 ```
 
+## Python Requests Example
+
+The following is an example of how to make the same POST request using the Python requests library:
+
+```python
+import requests
+import json
+
+url = 'http:<IP>:<PORT>/retrieve_context/'
+headers = {
+    'accept': 'application/json',
+    'Content-Type': 'application/json'
+}
+data = {
+    'user_query': "Hi there!",
+    'chat_history': [],
+    'upload_file': b"some bytes"
+}
+
+response = requests.post(url, headers=headers, data=json.dumps(data))
+print(response.text)
+```
+
 ## Other requirements:
 
     - File formats supported?
     - Max file size supported?
-    - Average latency of end to end request as a function of file upload size 
+    - Average latency of end to end request as a function of file upload size
     - Average latency of end to end request as a function of file input query + chat history bucketed to different file sizes
     - Does the PDF need to be readbale or do you have inbuilt OCR for non readable PDFs
-    
- 	
