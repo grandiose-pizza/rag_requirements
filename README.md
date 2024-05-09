@@ -50,7 +50,7 @@ import json
 url = 'http:<IP>:<PORT>/retrieve_context/'
 headers = {
     'accept': 'application/json',
-    'Content-Type': 'application/json'
+    'Content-Type: 'application/json'
 }
 data = {
     'user_query': "Hi there!",
@@ -62,10 +62,36 @@ response = requests.post(url, headers=headers, data=json.dumps(data))
 print(response.text)
 ```
 
+## JavaScript Fetch Example
+
+The following is an example of how to make the same POST request using the JavaScript Fetch API:
+
+```javascript
+const url = 'http:<IP>:<PORT>/retrieve_context/';
+const headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+};
+const data = {
+    user_query: "Hi there!",
+    chat_history: [],
+    upload_file: new Blob(["some bytes"], { type: 'text/plain' })
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch((error) => console.error('Error:', error));
+```
+
 ## Other requirements:
 
     - File formats supported?
     - Max file size supported?
     - Average latency of end to end request as a function of file upload size
     - Average latency of end to end request as a function of file input query + chat history bucketed to different file sizes
-    - Does the PDF need to be readbale or do you have inbuilt OCR for non readable PDFs
+    - Does the PDF need to be readable or do you have inbuilt OCR for non readable PDFs
