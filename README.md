@@ -5,7 +5,7 @@ URL = 'http:LOCALHOST:PORT/retrieve_context/'
 ## Input params takes in the following three params with data types mentioned:
 /retrieve_context
 
-	- alt_id: str = "5"
+	- session_id: str = "5"
  	- user_query: str = "What is the total amount in the Bill?"
 	- chat_history: Optional[Union[List[Dict[str, str]], None]] = []
 	- file: Optional[bytes]
